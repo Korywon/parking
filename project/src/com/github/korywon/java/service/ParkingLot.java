@@ -43,7 +43,7 @@ public class ParkingLot {
     GateTracker gateTracker;
 
     /**
-     * Constructor to create a new parking lot object.
+     * Constructor to create a new <Code>ParkingLot</Code> object.
      * @param name Title to identify the parking lot.
      * @param capacity Maximum capacity of the parking lot.
      * @param vacantSpots Number of vacant spots.

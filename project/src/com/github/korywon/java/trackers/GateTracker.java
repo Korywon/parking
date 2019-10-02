@@ -13,7 +13,7 @@ public class GateTracker {
     }
 
     public void editGate(String title) {
-        
+
     }
 
     public void removeGate(String title) {

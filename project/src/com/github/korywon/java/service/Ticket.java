@@ -36,7 +36,7 @@ public class Ticket {
     private Timestamp timestampClose;
 
     /**
-     * Creates a new Ticket object.
+     * Constructor to create a new <code>Ticket</code> object.
      * @param licensePlateNumber License plate number of the driver's car.
      * @param parkingLotName Name of the parking lot.
      * @param gateEnter Gate that was entered through.

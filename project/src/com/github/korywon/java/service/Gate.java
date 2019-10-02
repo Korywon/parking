@@ -17,7 +17,7 @@ public class Gate {
     private boolean active;
 
     /**
-     * Creates a new Gate object.
+     * Constructor to create a new <code>Gate</code> object.
      * @param type Type of gate. Common types are "enter" and "exit".
      * @param name Name of the gate.
      * @param active True if gate is active (open) and false if gate is inactive (closed).
