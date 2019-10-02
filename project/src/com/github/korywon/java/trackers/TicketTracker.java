@@ -18,9 +18,16 @@ public class TicketTracker {
     }
 
     /**
+     * Edits a ticket
+     */
+    public void editTicket(String licensePlateNumber) {
+
+    }
+
+    /**
      * Closes a ticket.
      */
-    public void closeTicket() {
+    public void closeTicket(String licensePlateNumber) {
 
     }
 }
