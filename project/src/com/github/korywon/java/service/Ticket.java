@@ -11,7 +11,7 @@ public class Ticket {
     /**
      * License plate number the ticket is associated with.
      */
-    private String licensePlateNumber;
+    private Car car;
     /**
      * Name of the parking lot number.
      */
@@ -36,8 +36,18 @@ public class Ticket {
     private Timestamp timestampClose;
 
     /**
+     * The cost of the ticket.
+     */
+    private float cost;
+
+    /**
+     * Boolean flag to indicate if the cost has been paid.
+     */
+    private boolean costPaid;
+
+    /**
      * Constructor to create a new <code>Ticket</code> object.
-     * @param licensePlateNumber License plate number of the driver's car.
+     * @param car Car object holding details of car.
      * @param parkingLotName Name of the parking lot.
      * @param gateEnter Gate that was entered through.
      * @param gateExit Gate that was exited through.
@@ -45,23 +55,25 @@ public class Ticket {
      * @param timestampClose Timestamp when the ticket was closed.
      */
     Ticket(
-        String licensePlateNumber, String parkingLotName,
+        Car car, String parkingLotName,
         Gate gateEnter, Gate gateExit,
-        Timestamp timestampOpen, Timestamp timestampClose
+        Timestamp timestampOpen, Timestamp timestampClose, float cost, boolean costPaid
     ) {
-        this.licensePlateNumber = licensePlateNumber;
+        this.car = car;
         this.gateEnter = gateEnter;
         this.gateExit = gateExit;
         this.timestampOpen = timestampOpen;
         this.timestampClose = timestampClose;
+        this.cost = cost;
+        this.costPaid = costPaid;
     }
 
-    public String getLicensePlateNumber() {
-        return licensePlateNumber;
+    public Car getCar() {
+        return this.car;
     }
 
-    public void setLicensePlateNumber(String licensePlateNumber) {
-        this.licensePlateNumber = licensePlateNumber;
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public String getParkingLotName() {
