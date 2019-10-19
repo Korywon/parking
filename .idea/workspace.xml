@@ -1,17 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87523074-369c-47c1-809a-09b81817eecf" name="Default Changelist" comment="" />
+    <list default="true" id="c4621838-5ebf-487a-a240-1c4152eb3250" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/cosc-4366-assignment-3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/out/production/project/META-INF/project.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/out/production/project/com/github/korywon/resources/view/main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/controllers/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/Gate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/ParkingLot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/Ticket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/trackers/GateTracker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/trackers/ParkingLotTracker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/trackers/TicketTracker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/resources/view/main.fxml" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1RbvZ6VTmyI463z0IqsPnR2E00G" />
+  <component name="ProjectId" id="1SLmfv1TU4sYC59lrZToZhZn2b0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn test" />
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -24,16 +75,30 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.korywon.parking.controller.App" />
+      <module name="parking" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="87523074-369c-47c1-809a-09b81817eecf" name="Default Changelist" comment="" />
-      <created>1569948663895</created>
+      <changelist id="c4621838-5ebf-487a-a240-1c4152eb3250" name="Default Changelist" comment="" />
+      <created>1571351356611</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1569948663895</updated>
+      <updated>1571351356611</updated>
     </task>
     <servers />
   </component>
