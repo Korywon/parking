@@ -43,13 +43,12 @@ public class OpenCloseTicketsOpenAt extends StateNode {
         userInput = this.commandListener.promptForInput("Enter license plate number: ");
         newTicket.setLicensePlateNumber(userInput);
 
-        // TODO: Search for license plate number in active.csv
         ParserTicket ticketParser = new ParserTicket("parking-data/tickets/active.csv");
         List<Ticket> ticketsList = ticketParser.getTicketList();
-        for (Ticket ticket : ticketsList) {
-            if (ticket.getLicensePlateNumber().equals(userInput)) {
+        for (int i = 0; i < ticketsList.size(); i++) {
+            if (ticketsList.get(i).getLicensePlateNumber().equals(userInput)) {
                 System.out.println("\""+ userInput + "\" has an active ticket. Active ticket must be closed before opening a new one.");
-                this.nextNode = new OpenCloseTicketsClosePay("", ticket);
+                this.nextNode = new OpenCloseTicketsClosePay("", ticketsList, i);
                 return;
             }
         }

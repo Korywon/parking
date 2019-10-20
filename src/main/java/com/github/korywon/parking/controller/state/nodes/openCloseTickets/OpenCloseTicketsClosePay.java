@@ -8,13 +8,16 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class OpenCloseTicketsClosePay extends StateNode {
+    private List<Ticket> ticketsList;
     private Ticket activeTicket;
 
-    public OpenCloseTicketsClosePay(String transitionCommand, Ticket activeTicket) {
+    public OpenCloseTicketsClosePay(String transitionCommand, List<Ticket> ticketsList, int ticketIndex) {
         super(transitionCommand);
-        this.activeTicket = activeTicket;
+        this.ticketsList = ticketsList;
+        this.activeTicket = ticketsList.get(ticketIndex);
     }
 
     @Override
@@ -25,21 +28,47 @@ public class OpenCloseTicketsClosePay extends StateNode {
     @Override
     public void start() {
         System.out.println(
-            "\"" + activeTicket.getLicensePlateNumber() + "\" -- Pay close ticket now?" + "\n" +
+            "Amount due: " + this.activeTicket.getAmountDue() + "\n" +
+            "\"" + activeTicket.getLicensePlateNumber() + "\" -- Pay and close ticket now?" + "\n" +
             "[ y ]" + "\t" + "Yes" + "\n" +
             "[ n ]" + "\t" + "No"
         );
+
 
         boolean valid = false;
         while (!valid) {
             String userInput = this.commandListener.promptForInput("Enter command: ");
 
             if (userInput.equals("y")) {
+
+                // TODO: Remove from active.csv.
+                try {
+                    BufferedWriter activeWriter = new BufferedWriter(new FileWriter("parking-data/tickets/active.csv"));
+                    for (Ticket ticket : this.ticketsList) {
+                        if (ticket != this.activeTicket) {
+                            activeWriter.write(
+                            ticket.getLicensePlateNumber() + "," +
+                                ticket.getGateEnter().getName() + "," +
+                                ticket.getTimeEnter() + "," +
+                                ticket.getGateExit().getName() + "," +
+                                ticket.getTimeClose() + "," +
+                                ticket.getAmountDue() + System.lineSeparator()
+                            );
+                        }
+                    }
+
+                    activeWriter.close();
+                } catch (Exception e) {
+                    System.out.println("Error: Unable to write to active.csv");
+                }
+
+                // Sets exit time.
                 Date date = new Date();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 activeTicket.setGateExit(new Gate("exit", ""));
                 activeTicket.setTimeClose(formatter.format(date));
 
+                // Appends ticket to inactive.csv
                 try {
                 BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/tickets/inactive.csv", true));
                 writer.newLine();

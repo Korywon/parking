@@ -46,6 +46,8 @@ public class ViewTicketsMainMenu extends StateNode {
     public void start() {
         System.out.println("===== View Tickets Main Menu =====");
 
+        System.out.println("Notice: This feature has not yet been implemented and does not work.");
+
         for (int i = 0; i < this.parkingLots.size(); i++) {
             System.out.println(
                 "[ " + (i+1) + " ]" + "\t" + this.parkingLots.get(i).getName()
@@ -65,7 +67,7 @@ public class ViewTicketsMainMenu extends StateNode {
             String userInput = this.commandListener.promptForInput("Enter command: ");
 
             if (userInput.equals("c")) {
-                this.nextNode = new ViewTicketsMainMenu("");
+                this.nextNode = new AppMainMenu("");
                 valid = true;
             }
             else if (userInput.equals("a")) {

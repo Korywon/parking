@@ -16,6 +16,9 @@ public class ViewParkingLotsMainMenu extends StateNode {
     @Override
     public void start() {
         System.out.println("===== View Parking Lots Main Menu =====");
+
+        System.out.println("Notice: This feature has not yet been implemented and does not work.");
+
         // TODO: Build menu options by printing parking lots from file
         System.out.println(
             "[ a ]" + "\t" + "Add new parking lot" + "\n" +
