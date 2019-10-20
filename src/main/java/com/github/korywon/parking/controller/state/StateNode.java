@@ -12,12 +12,12 @@ public abstract class StateNode {
     public StateNode(String transitionCommand) {
         this.transitionCommand = transitionCommand;
         commandListener = new CommandListener();
-        // calls to initialize the node
+    }
+
+    public StateNode launch() {
         init();
-        // calls to start the node
         start();
-        // calls to exit the node
-        exit();
+        return exit();
     }
 
     /**
@@ -31,7 +31,7 @@ public abstract class StateNode {
     protected StateNode nextNode;
 
     /**
-     * Command that is or was used to transition to this node.
+     * Command that is00000000000000000 or was used to transition to this node.
      */
     protected String transitionCommand;
 

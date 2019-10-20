@@ -16,11 +16,12 @@ public class AppExit extends StateNode {
 
     @Override
     public void start() {
-
+        System.out.println("Exiting system...");
+        this.nextNode = null;
     }
 
     @Override
     public StateNode exit() {
-        return null;
+        return this.nextNode;
     }
 }

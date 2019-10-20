@@ -13,7 +13,7 @@ public class CommandListener {
     }
 
     /**
-     * Prompts the user for an input.
+     * Prompts the user for an input. Returns a string of the user's input.
      * @param prompt Prints a prompt message before the input.
      * @return Returns the string that the user entered in.
      */

@@ -36,6 +36,11 @@ public class MainController {
             System.out.println("Starting application...");
 
             StateNode currentState = new AppMainMenu("");
+            do {
+                currentState = currentState.launch();
+            } while(currentState != null);
+
+            System.out.println("Application loop terminated.");
         }
     }
 }

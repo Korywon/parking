@@ -12,15 +12,10 @@ public class AppMainMenu extends StateNode {
 
     public AppMainMenu(String transitionCommand) {
         super(transitionCommand);
-        this.transitionNodes.add(new OpenCloseTicketsMainMenu("1"));
-        this.transitionNodes.add(new ViewTicketsMainMenu("2"));
-        this.transitionNodes.add(new ViewParkingLotsMainMenu("3"));
-        this.transitionNodes.add(new AppMainMenu("X"));
     }
 
     @Override
     public void init() {
-
     }
 
     @Override
@@ -30,10 +25,35 @@ public class AppMainMenu extends StateNode {
             "[ 1 ]" + "\t" + "Open/Close Tickets" + "\n" +
             "[ 2 ]" + "\t" + "View Tickets" + "\n" +
             "[ 3 ]" + "\t" + "View Parking Lots" + "\n" +
-            "[ X ]" + "\t" + "Exit System"
+            "[ x ]" + "\t" + "Exit System"
         );
 
-        String userInput = this.commandListener.promptForInput("Enter command: ");
+        boolean valid = true;
+        do {
+            String userInput = this.commandListener.promptForInput("Enter command: ");
+
+            if (userInput.equals("1")) {
+                this.nextNode = new OpenCloseTicketsMainMenu("");
+                valid = true;
+            }
+            else if (userInput.equals("2")) {
+                this.nextNode = new ViewTicketsMainMenu("");
+                valid = true;
+            }
+            else if (userInput.equals("3")) {
+                this.nextNode = new ViewParkingLotsMainMenu("");
+                valid = true;
+            }
+            else if (userInput.equals("x")) {
+                this.nextNode = new AppExit("");
+                valid = true;
+            }
+            else {
+                System.out.println("Invalid command. Try again.");
+                valid = false;
+            }
+
+        } while(!valid);
     }
 
     @Override

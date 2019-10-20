@@ -2,31 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4621838-5ebf-487a-a240-1c4152eb3250" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cosc-4366-assignment-3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/out/production/project/META-INF/project.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/out/production/project/com/github/korywon/resources/view/main.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/controllers/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/Car.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/Gate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/ParkingLot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/service/Ticket.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/trackers/GateTracker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/trackers/ParkingLotTracker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/java/trackers/TicketTracker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/com/github/korywon/resources/view/main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/StateNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/StateNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppExit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppExit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewParkingLots/ViewParkingLotsMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewParkingLots/ViewParkingLotsMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/utility/CommandListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/utility/CommandListener.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +92,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
