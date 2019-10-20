@@ -54,9 +54,6 @@ public class OpenCloseTicketsOpen extends StateNode {
 
         System.out.println("[ c ]" + "\t" + "Cancel");
 
-
-        // TODO: Implement open parking lot state.
-
         boolean valid = true;
         do {
             String userInput = this.commandListener.promptForInput("Enter command: ");

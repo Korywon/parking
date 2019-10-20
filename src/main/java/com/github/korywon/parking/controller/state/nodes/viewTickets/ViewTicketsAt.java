@@ -1,10 +1,14 @@
 package com.github.korywon.parking.controller.state.nodes.viewTickets;
 
 import com.github.korywon.parking.controller.state.StateNode;
+import com.github.korywon.parking.objects.ParkingLot;
 
-public class ViewTicketsAll extends StateNode {
-    public ViewTicketsAll(String transitionCommand) {
+public class ViewTicketsAt extends StateNode {
+    private ParkingLot parkingLot;
+
+    public ViewTicketsAt(String transitionCommand, ParkingLot parkingLot) {
         super(transitionCommand);
+        this.parkingLot = parkingLot;
     }
 
     @Override
@@ -14,7 +18,7 @@ public class ViewTicketsAll extends StateNode {
 
     @Override
     public void start() {
-        // TODO: Implement start for view all tickets
+        // TODO: Implement start fo view tickets at
 
         this.nextNode = new ViewTicketsMainMenu("");
     }

@@ -71,7 +71,7 @@ public class Ticket {
 
     public void printInfo() {
         System.out.println(
-          "-----" + this.licensePlateNumber + "-----" + "\n" +
+          "License plate number: " + this.licensePlateNumber + "\n" +
           "Gate enter: " + this.gateEnter.getName() + "\n" +
           "Time enter: " + this.timeEnter + "\n" +
           "Gate exit: " + this.gateExit.getName() + "\n" +

@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c4621838-5ebf-487a-a240-1c4152eb3250" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsClosePay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsClosePay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Gate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Gate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpenAt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpenAt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsAll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsMainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Ticket.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

@@ -4,7 +4,10 @@ import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.objects.Gate;
 import com.github.korywon.parking.objects.ParkingLot;
 import com.github.korywon.parking.objects.Ticket;
+import com.github.korywon.parking.utility.parsers.ParserTicket;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -34,7 +37,6 @@ public class OpenCloseTicketsOpenAt extends StateNode {
     public void start() {
         System.out.println("===== " + parkingLot.getName() + " - Open New Ticket =====");
 
-
         Ticket newTicket = new Ticket();
         String userInput;
 
@@ -42,6 +44,16 @@ public class OpenCloseTicketsOpenAt extends StateNode {
         newTicket.setLicensePlateNumber(userInput);
 
         // TODO: Search for license plate number in active.csv
+        ParserTicket ticketParser = new ParserTicket("parking-data/tickets/active.csv");
+        List<Ticket> ticketsList = ticketParser.getTicketList();
+        for (Ticket ticket : ticketsList) {
+            if (ticket.getLicensePlateNumber().equals(userInput)) {
+                System.out.println("\""+ userInput + "\" has an active ticket. Active ticket must be closed before opening a new one.");
+                this.nextNode = new OpenCloseTicketsClosePay("", ticket);
+                return;
+            }
+        }
+
 
         List<Gate> enterGates = parkingLot.getGatesEnter();
         for (int i = 0; i < enterGates.size(); i++) {
@@ -71,11 +83,26 @@ public class OpenCloseTicketsOpenAt extends StateNode {
 
         newTicket.setAmountDue(this.parkingLot.getPrice());
 
-        System.out.println("----- Receipt -----");
-        newTicket.printInfo();
-        System.out.println("Note: Amount due will be charged when you exit the parking lot.");
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/tickets/active.csv", true));
+            writer.newLine();
+            writer.write(
+                newTicket.getLicensePlateNumber() + "," +
+                newTicket.getGateEnter().getName() + "," +
+                newTicket.getTimeEnter() + "," +
+                newTicket.getGateExit().getName() + "," +
+                newTicket.getTimeClose() + "," +
+                newTicket.getAmountDue()
+            );
+            writer.close();
 
-        // TODO: Save ticket to file.
+            System.out.println("----- Receipt -----");
+            newTicket.printInfo();
+            System.out.println("Note: Amount due will be charged when you exit the parking lot.");
+
+        } catch (Exception e) {
+            System.out.println("Error: Unable to write to file.");
+        }
 
         this.nextNode = new OpenCloseTicketsOpen("");
     }
