@@ -1,6 +1,5 @@
 package com.github.korywon.parking.controller;
 
-import com.github.korywon.parking.controller.state.StateMachine;
 import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.controller.state.nodes.app.AppMainMenu;
 import com.github.korywon.parking.objects.*;
@@ -11,7 +10,6 @@ import java.util.List;
  * Holds the main loop for the console application.
  */
 public class MainController {
-    StateMachine stateMachine;
     List<ParkingLot> parkingLotList;
     List<Car> carList;
     List<Ticket> ticketList;

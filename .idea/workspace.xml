@@ -4,14 +4,8 @@
     <list default="true" id="c4621838-5ebf-487a-a240-1c4152eb3250" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/StateNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/StateNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppExit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppExit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewParkingLots/ViewParkingLotsMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewParkingLots/ViewParkingLotsMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/utility/CommandListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/utility/CommandListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Ticket.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
