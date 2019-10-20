@@ -12,7 +12,8 @@ import java.util.List;
 public class MainController {
     List<ParkingLot> parkingLotList;
     List<Car> carList;
-    List<Ticket> ticketList;
+    List<Ticket> openTickets;
+    List<Ticket> closedTickets;
 
     /**
      * Boolean flag that indicates that initialization was successful.

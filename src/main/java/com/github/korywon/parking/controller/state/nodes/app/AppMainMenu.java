@@ -28,32 +28,30 @@ public class AppMainMenu extends StateNode {
             "[ x ]" + "\t" + "Exit System"
         );
 
-        boolean valid = true;
-        do {
+        while(true) {
             String userInput = this.commandListener.promptForInput("Enter command: ");
 
             if (userInput.equals("1")) {
                 this.nextNode = new OpenCloseTicketsMainMenu("");
-                valid = true;
+                return;
             }
             else if (userInput.equals("2")) {
                 this.nextNode = new ViewTicketsMainMenu("");
-                valid = true;
+                return;
             }
             else if (userInput.equals("3")) {
                 this.nextNode = new ViewParkingLotsMainMenu("");
-                valid = true;
+                return;
             }
             else if (userInput.equals("x")) {
                 this.nextNode = new AppExit("");
-                valid = true;
+                return;
             }
             else {
                 System.out.println("Invalid command. Try again.");
-                valid = false;
             }
 
-        } while(!valid);
+        }
     }
 
     @Override
