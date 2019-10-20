@@ -79,4 +79,8 @@ public class Ticket {
           "Amount due: " + this.amountDue
         );
     }
+
+    public boolean isOpen() {
+        return (gateExit == null || this.timeClose.equals(""));
+    }
 }

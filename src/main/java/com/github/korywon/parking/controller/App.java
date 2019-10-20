@@ -9,14 +9,6 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        ParserTicket ticketParser = new ParserTicket("active.csv");
-        List<Ticket> ticketList = ticketParser.getTicketList();
-
-        for (Ticket ticket : ticketList) {
-            ticket.printInfo();
-        }
-
-
         System.out.println("Beginning application launch...");
         // creates a new controller
         MainController controller = new MainController();

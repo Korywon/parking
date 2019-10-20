@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4621838-5ebf-487a-a240-1c4152eb3250" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/utility/parsers/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/FileHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/app/AppMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Gate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Gate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/ParkingLot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +30,7 @@
   <component name="ProjectId" id="1SLmfv1TU4sYC59lrZToZhZn2b0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />

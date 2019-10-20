@@ -4,6 +4,8 @@ public class Gate {
     private String name;
     private String type;
 
+    public Gate() { }
+
     public Gate(String type, String name) {
         this.type = type;
         this.name = name;

@@ -20,11 +20,6 @@ public class MainController {
      */
     private boolean initSuccess;
 
-    /**
-     * TODO: Load parking lots list.
-     * TODO: Load tickets list.
-     * TODO: Parse parking lots, cars, and tickets.
-     */
     void init() {
         System.out.println("Initializing application...");
         initSuccess = true;
