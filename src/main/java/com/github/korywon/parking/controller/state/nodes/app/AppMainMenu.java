@@ -2,8 +2,6 @@ package com.github.korywon.parking.controller.state.nodes.app;
 
 import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.controller.state.nodes.openCloseTickets.OpenCloseTicketsMainMenu;
-import com.github.korywon.parking.controller.state.nodes.viewParkingLots.ViewParkingLotsMainMenu;
-import com.github.korywon.parking.controller.state.nodes.viewTickets.ViewTicketsMainMenu;
 
 public class AppMainMenu extends StateNode {
     private String transitionCommand;
@@ -21,8 +19,6 @@ public class AppMainMenu extends StateNode {
         System.out.println(
             "===== Parking Application =====" + "\n" +
             "[ 1 ]" + "\t" + "Open/Close Tickets" + "\n" +
-            "[ 2 ]" + "\t" + "View Tickets" + "\n" +
-            "[ 3 ]" + "\t" + "View Parking Lots" + "\n" +
             "[ x ]" + "\t" + "Exit System"
         );
 
@@ -31,14 +27,6 @@ public class AppMainMenu extends StateNode {
 
             if (userInput.equals("1")) {
                 this.nextNode = new OpenCloseTicketsMainMenu("");
-                return;
-            }
-            else if (userInput.equals("2")) {
-                this.nextNode = new ViewTicketsMainMenu("");
-                return;
-            }
-            else if (userInput.equals("3")) {
-                this.nextNode = new ViewParkingLotsMainMenu("");
                 return;
             }
             else if (userInput.equals("x")) {
