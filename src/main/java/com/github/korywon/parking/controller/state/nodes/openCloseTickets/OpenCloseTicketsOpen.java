@@ -2,7 +2,6 @@ package com.github.korywon.parking.controller.state.nodes.openCloseTickets;
 
 import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.objects.ParkingLot;
-import com.github.korywon.parking.utility.parsers.ParserParkingLot;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.io.File;

@@ -2,7 +2,6 @@ package com.github.korywon.parking.controller.state.nodes.openCloseTickets;
 
 import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.objects.Ticket;
-import com.github.korywon.parking.utility.parsers.ParserTicket;
 
 import java.util.List;
 

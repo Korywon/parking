@@ -26,21 +26,23 @@ public class OpenCloseTicketsMainMenu extends StateNode {
         do {
             String userInput = this.commandListener.promptForInput("Enter command: ");
 
-            if (userInput.equals("1")) {
-                this.nextNode = new OpenCloseTicketsOpen("");
-                valid = true;
-            }
-            else if (userInput.equals("2")) {
-                this.nextNode = new OpenCloseTicketsClose("");
-                valid = true;
-            }
-            else if (userInput.equals("c")) {
-                this.nextNode = new AppMainMenu("");
-                valid = true;
-            }
-            else {
-                System.out.println("Invalid command. Try again.");
-                valid = false;
+            switch (userInput) {
+                case "1":
+                    this.nextNode = new OpenCloseTicketsOpen("");
+                    valid = true;
+                    break;
+                case "2":
+                    this.nextNode = new OpenCloseTicketsClose("");
+                    valid = true;
+                    break;
+                case "c":
+                    this.nextNode = new AppMainMenu("");
+                    valid = true;
+                    break;
+                default:
+                    System.out.println("Invalid command. Try again.");
+                    valid = false;
+                    break;
             }
 
         } while(!valid);

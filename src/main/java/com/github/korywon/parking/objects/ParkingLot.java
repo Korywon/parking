@@ -1,30 +1,37 @@
 package com.github.korywon.parking.objects;
 
-import java.util.List;
-
-public class ParkingLot {
-    private String name;
+public class ParkingLot extends Group {
+    private String parkingLotName;
     private int capacity;
-    private List<Gate> gatesEnter;
-    private List<Gate> gatesExit;
-    private float price;
+    private String gateEnter;
+    private String gateExit;
+    private float parkingLotPrice;
 
     public ParkingLot() {}
 
-    public ParkingLot(String name, int capacity, List<Gate> gatesEnter, List<Gate> gatesExit, float price) {
-        this.name = name;
+    public ParkingLot(String parkingLotName, int capacity, String gateEnter, String gateExit, float parkingLotPrice) {
+        this.parkingLotName = parkingLotName;
         this.capacity = capacity;
-        this.gatesEnter = gatesEnter;
-        this.gatesExit = gatesExit;
-        this.price = price;
+        this.gateEnter = gateEnter;
+        this.gateExit = gateExit;
+        this.parkingLotPrice = parkingLotPrice;
     }
 
-    public String getName() {
-        return name;
+    public ParkingLot(String groupName, float groupPrice, String parkingLotName, int capacity, String gateEnter, String gateExit, float parkingLotPrice) {
+        super(groupName, groupPrice);
+        this.parkingLotName = parkingLotName;
+        this.capacity = capacity;
+        this.gateEnter = gateEnter;
+        this.gateExit = gateExit;
+        this.parkingLotPrice = parkingLotPrice;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getParkingLotName() {
+        return parkingLotName;
+    }
+
+    public void setParkingLotName(String parkingLotName) {
+        this.parkingLotName = parkingLotName;
     }
 
     public int getCapacity() {
@@ -35,48 +42,46 @@ public class ParkingLot {
         this.capacity = capacity;
     }
 
-    public List<Gate> getGatesEnter() {
-        return gatesEnter;
+    public String getGateEnter() {
+        return gateEnter;
     }
 
-    public void setGatesEnter(List<Gate> gatesEnter) {
-        this.gatesEnter = gatesEnter;
+    public void setGateEnter(String gateEnter) {
+        this.gateEnter = gateEnter;
     }
 
-    public List<Gate> getGatesExit() {
-        return gatesExit;
+    public String getGateExit() {
+        return gateExit;
     }
 
-    public void setGatesExit(List<Gate> gatesExit) {
-        this.gatesExit = gatesExit;
+    public void setGateExit(String gateExit) {
+        this.gateExit = gateExit;
     }
 
-    public float getPrice() {
-        return price;
+    public float getParkingLotPrice() {
+        return this.parkingLotPrice;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public void setParkingLotPrice(float parkingLotPrice) {
+        this.parkingLotPrice = parkingLotPrice;
     }
 
     public void printInfo() {
         System.out.println(
-          "----- " + this.name + " -----" + "\n" +
-          "Capacity: " + this.capacity
+            "----- Parking Lot -----" + "\n" +
+            "Parking lot name: " + this.parkingLotName + "\n" +
+            "Group name: " + this.groupName + "\n" +
+            "Capacity: " + this.capacity + "\n" +
+            "Gate enter: " + this.gateEnter + "\n" +
+            "Gate exit: " + this.gateExit
         );
 
-        System.out.print("Enter gates: ");
-        for (Gate gate : gatesEnter) {
-            System.out.print("\"" + gate.getName() + "\" ");
+        if (this.groupPrice > 0.0f) {
+            System.out.println("Group price: " + this.groupPrice);
         }
-        System.out.println();
 
-        System.out.print("Exit gates: ");
-        for (Gate gate : gatesExit) {
-            System.out.print("\"" + gate.getName() + "\" ");
-        }
-        System.out.println();
+        System.out.println("Default price: " + this.parkingLotPrice);
 
-        System.out.println("Price: " + this.name);
+        System.out.println();
     }
 }

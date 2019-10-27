@@ -49,7 +49,7 @@ public class OpenCloseTicketsClosePay extends StateNode {
                                 ticket.getGateEnter().getName() + "," +
                                 ticket.getTimeEnter() + "," +
                                 ticket.getGateExit().getName() + "," +
-                                ticket.getTimeClose() + "," +
+                                ticket.getTimeExit() + "," +
                                 ticket.getAmountDue() + System.lineSeparator()
                             );
                         }
@@ -63,8 +63,8 @@ public class OpenCloseTicketsClosePay extends StateNode {
                 // Sets exit time.
                 Date date = new Date();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                activeTicket.setGateExit(new Gate("exit", ""));
-                activeTicket.setTimeClose(formatter.format(date));
+                activeTicket.setGateExit(new Gate(""));
+                activeTicket.setTimeExit(formatter.format(date));
 
                 // Appends ticket to inactive.csv
                 try {
@@ -75,7 +75,7 @@ public class OpenCloseTicketsClosePay extends StateNode {
                     activeTicket.getGateEnter().getName() + "," +
                     activeTicket.getTimeEnter() + "," +
                     activeTicket.getGateExit().getName() + "," +
-                    activeTicket.getTimeClose() + "," +
+                    activeTicket.getTimeExit() + "," +
                     activeTicket.getAmountDue()
                 );
                 writer.close();

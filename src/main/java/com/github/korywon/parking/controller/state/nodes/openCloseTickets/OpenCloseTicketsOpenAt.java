@@ -4,7 +4,6 @@ import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.objects.Gate;
 import com.github.korywon.parking.objects.ParkingLot;
 import com.github.korywon.parking.objects.Ticket;
-import com.github.korywon.parking.utility.parsers.ParserTicket;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -54,7 +53,7 @@ public class OpenCloseTicketsOpenAt extends StateNode {
         }
 
 
-        List<Gate> enterGates = parkingLot.getGatesEnter();
+        List<Gate> enterGates = parkingLot.getGateEnter();
         for (int i = 0; i < enterGates.size(); i++) {
             System.out.println("[ " + (i+1) + " ]" + "\t" + enterGates.get(i).getName());
         }
@@ -76,8 +75,8 @@ public class OpenCloseTicketsOpenAt extends StateNode {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         newTicket.setTimeEnter(formatter.format(date));
-        newTicket.setGateExit(new Gate("exit", ""));
-        newTicket.setTimeClose("");
+        newTicket.setGateExit(new Gate(""));
+        newTicket.setTimeExit("");
 
         newTicket.setAmountDue(this.parkingLot.getPrice());
 
@@ -89,7 +88,7 @@ public class OpenCloseTicketsOpenAt extends StateNode {
                 newTicket.getGateEnter().getName() + "," +
                 newTicket.getTimeEnter() + "," +
                 newTicket.getGateExit().getName() + "," +
-                newTicket.getTimeClose() + "," +
+                newTicket.getTimeExit() + "," +
                 newTicket.getAmountDue()
             );
             writer.close();

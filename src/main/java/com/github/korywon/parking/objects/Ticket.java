@@ -1,23 +1,34 @@
 package com.github.korywon.parking.objects;
 
-import java.util.Date;
-
 public class Ticket {
     private String licensePlateNumber;
-    private Gate gateEnter;
-    private String timeEnter;
-    private Gate gateExit;
-    private String timeClose;
+    private String parkingLotName;
+    private String groupName;
+    private int parkingSpace;
+    private String gateEnter;
+    private String gateExit;
     private float amountDue;
 
-    public Ticket() { }
+    public Ticket() {
+        this.licensePlateNumber = "";
+        this.parkingLotName = "";
+        this.parkingSpace = -1;
+        this.groupName = "";
+        this.gateEnter = "";
+        this.gateExit = "";
+        this.amountDue = 0.0f;
+    }
 
-    public Ticket(String licensePlateNumber, Gate gateEnter, String timeEnter, Gate gateExit, String timeClose, float amountDue) {
+    public Ticket(
+        String licensePlateNumber, String parkingLotName, String groupName, int parkingSpace, String gateEnter,
+        String gateExit, float amountDue
+    ) {
         this.licensePlateNumber = licensePlateNumber;
+        this.parkingLotName = parkingLotName;
+        this.groupName = groupName;
+        this.parkingSpace = parkingSpace;
         this.gateEnter = gateEnter;
-        this.timeEnter = timeEnter;
         this.gateExit = gateExit;
-        this.timeClose = timeClose;
         this.amountDue = amountDue;
     }
 
@@ -29,36 +40,44 @@ public class Ticket {
         this.licensePlateNumber = licensePlateNumber;
     }
 
-    public Gate getGateEnter() {
+    public String getParkingLotName() {
+        return parkingLotName;
+    }
+
+    public void setParkingLotName(String parkingLotName) {
+        this.parkingLotName = parkingLotName;
+    }
+
+    public int getParkingSpace() {
+        return parkingSpace;
+    }
+
+    public void setParkingSpace(int parkingSpace) {
+        this.parkingSpace = parkingSpace;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public String getGateEnter() {
         return gateEnter;
     }
 
-    public void setGateEnter(Gate gateEnter) {
+    public void setGateEnter(String gateEnter) {
         this.gateEnter = gateEnter;
     }
 
-    public String getTimeEnter() {
-        return timeEnter;
-    }
-
-    public void setTimeEnter(String timeEnter) {
-        this.timeEnter = timeEnter;
-    }
-
-    public Gate getGateExit() {
+    public String getGateExit() {
         return gateExit;
     }
 
-    public void setGateExit(Gate gateExit) {
+    public void setGateExit(String gateExit) {
         this.gateExit = gateExit;
-    }
-
-    public String getTimeClose() {
-        return timeClose;
-    }
-
-    public void setTimeClose(String timeClose) {
-        this.timeClose = timeClose;
     }
 
     public float getAmountDue() {
@@ -71,16 +90,18 @@ public class Ticket {
 
     public void printInfo() {
         System.out.println(
-          "License plate number: " + this.licensePlateNumber + "\n" +
-          "Gate enter: " + this.gateEnter.getName() + "\n" +
-          "Time enter: " + this.timeEnter + "\n" +
-          "Gate exit: " + this.gateExit.getName() + "\n" +
-          "Time exit: " + this.timeClose + "\n" +
-          "Amount due: " + this.amountDue
+            "------ Ticket -----" + "\n" +
+            "License plate number: " + this.licensePlateNumber + "\n" +
+            "Parking lot name: " + this.parkingLotName + "\n" +
+            "Group name: " + this.licensePlateNumber + "\n" +
+            "Parking space: " + this.parkingSpace + "\n" +
+            "Gate enter: " + this.gateEnter + "\n" +
+            "Gate exit: " + this.gateExit + "\n" +
+            "Amount due: " + this.amountDue
         );
     }
 
     public boolean isOpen() {
-        return (gateExit == null || this.timeClose.equals(""));
+        return (gateExit == null || gateExit.equals(""));
     }
 }
