@@ -59,10 +59,9 @@ public class OpenCloseTicketsOpenAt extends StateNode {
             System.out.println("[ " + (i+1) + " ]" + "\t" + enterGates.get(i).getName());
         }
 
-        userInput = this.commandListener.promptForInput("Select gate: ");
-
         boolean valid = false;
         while (!valid) {
+            userInput = this.commandListener.promptForInput("Select gate: ");
             try {
                 int userNumber = Integer.parseInt(userInput) - 1;
                 if (userNumber >= 0 && userNumber < enterGates.size()) {
