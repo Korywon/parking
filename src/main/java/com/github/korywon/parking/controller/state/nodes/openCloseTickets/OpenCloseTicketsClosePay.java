@@ -40,8 +40,6 @@ public class OpenCloseTicketsClosePay extends StateNode {
             String userInput = this.commandListener.promptForInput("Enter command: ");
 
             if (userInput.equals("y")) {
-
-                // TODO: Remove from active.csv.
                 try {
                     BufferedWriter activeWriter = new BufferedWriter(new FileWriter("parking-data/tickets/active.csv"));
                     for (Ticket ticket : this.ticketsList) {

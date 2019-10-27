@@ -22,7 +22,6 @@ public class OpenCloseTicketsClose extends StateNode {
 
         String userInput = this.commandListener.promptForInput("Enter car's license plate number: ");
 
-        // TODO: Search for ticket. If found, move to ClosePay state.
         ParserTicket ticketParser = new ParserTicket("parking-data/tickets/active.csv");
         List<Ticket> ticketsList = ticketParser.getTicketList();
         for (int i = 0; i < ticketsList.size(); i++) {
