@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OpenCloseTicketsClose extends StateNode {
     public OpenCloseTicketsClose(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override

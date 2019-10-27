@@ -7,7 +7,7 @@ public class ViewTicketsAt extends StateNode {
     private ParkingLot parkingLot;
 
     public ViewTicketsAt(String transitionCommand, ParkingLot parkingLot) {
-        super(transitionCommand);
+        super();
         this.parkingLot = parkingLot;
     }
 

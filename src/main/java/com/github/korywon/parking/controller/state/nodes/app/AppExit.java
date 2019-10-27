@@ -6,7 +6,7 @@ public class AppExit extends StateNode {
     private String transitionCommand;
 
     public AppExit(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override

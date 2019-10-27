@@ -15,7 +15,7 @@ public class OpenCloseTicketsClosePay extends StateNode {
     private Ticket activeTicket;
 
     public OpenCloseTicketsClosePay(String transitionCommand, List<Ticket> ticketsList, int ticketIndex) {
-        super(transitionCommand);
+        super();
         this.ticketsList = ticketsList;
         this.activeTicket = ticketsList.get(ticketIndex);
     }

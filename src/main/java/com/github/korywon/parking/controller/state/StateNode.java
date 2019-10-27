@@ -9,8 +9,7 @@ import java.util.List;
  * @author Alvin Huynh
  */
 public abstract class StateNode {
-    public StateNode(String transitionCommand) {
-        this.transitionCommand = transitionCommand;
+    public StateNode() {
         commandListener = new CommandListener();
     }
 
@@ -29,11 +28,6 @@ public abstract class StateNode {
      * Next node to transition to once a terminal state has been reached.
      */
     protected StateNode nextNode;
-
-    /**
-     * Command that is00000000000000000 or was used to transition to this node.
-     */
-    protected String transitionCommand;
 
     /**
      * Object to handle command inputs from the console.

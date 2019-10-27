@@ -16,7 +16,7 @@ public class OpenCloseTicketsOpenAt extends StateNode {
     private ParkingLot parkingLot;
 
     public OpenCloseTicketsOpenAt(String transitionCommand, ParkingLot parkingLot) {
-        super(transitionCommand);
+        super();
         this.parkingLot = parkingLot;
     }
 

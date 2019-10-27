@@ -5,7 +5,7 @@ import com.github.korywon.parking.controller.state.nodes.app.AppMainMenu;
 
 public class ViewParkingLotsMainMenu extends StateNode {
     public ViewParkingLotsMainMenu(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override

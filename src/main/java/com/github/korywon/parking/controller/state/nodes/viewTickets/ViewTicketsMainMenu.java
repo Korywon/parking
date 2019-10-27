@@ -2,8 +2,6 @@ package com.github.korywon.parking.controller.state.nodes.viewTickets;
 
 import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.controller.state.nodes.app.AppMainMenu;
-import com.github.korywon.parking.controller.state.nodes.openCloseTickets.OpenCloseTicketsMainMenu;
-import com.github.korywon.parking.controller.state.nodes.openCloseTickets.OpenCloseTicketsOpenAt;
 import com.github.korywon.parking.objects.ParkingLot;
 import com.github.korywon.parking.utility.parsers.ParserParkingLot;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -16,7 +14,7 @@ public class ViewTicketsMainMenu extends StateNode {
     List<ParkingLot> parkingLots;
 
     public ViewTicketsMainMenu(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override

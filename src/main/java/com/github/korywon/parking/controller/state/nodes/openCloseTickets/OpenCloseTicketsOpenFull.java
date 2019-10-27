@@ -4,7 +4,7 @@ import com.github.korywon.parking.controller.state.StateNode;
 
 public class OpenCloseTicketsOpenFull extends StateNode {
     public OpenCloseTicketsOpenFull(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override

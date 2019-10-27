@@ -5,7 +5,7 @@ import com.github.korywon.parking.controller.state.nodes.app.AppMainMenu;
 
 public class OpenCloseTicketsMainMenu extends StateNode {
     public OpenCloseTicketsMainMenu(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override

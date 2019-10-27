@@ -4,7 +4,7 @@ import com.github.korywon.parking.controller.state.StateNode;
 
 public class ViewTicketsType extends StateNode {
     public ViewTicketsType(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override

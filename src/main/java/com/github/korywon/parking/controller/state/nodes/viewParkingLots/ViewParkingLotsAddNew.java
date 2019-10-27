@@ -4,7 +4,7 @@ import com.github.korywon.parking.controller.state.StateNode;
 
 public class ViewParkingLotsAddNew extends StateNode {
     public ViewParkingLotsAddNew(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override

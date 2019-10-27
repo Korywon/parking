@@ -13,7 +13,7 @@ public class OpenCloseTicketsOpen extends StateNode {
     public List<ParkingLot> parkingLots;
 
     public OpenCloseTicketsOpen(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override

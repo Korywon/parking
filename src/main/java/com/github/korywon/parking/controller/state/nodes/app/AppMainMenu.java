@@ -5,13 +5,11 @@ import com.github.korywon.parking.controller.state.nodes.openCloseTickets.OpenCl
 import com.github.korywon.parking.controller.state.nodes.viewParkingLots.ViewParkingLotsMainMenu;
 import com.github.korywon.parking.controller.state.nodes.viewTickets.ViewTicketsMainMenu;
 
-import java.util.List;
-
 public class AppMainMenu extends StateNode {
     private String transitionCommand;
 
     public AppMainMenu(String transitionCommand) {
-        super(transitionCommand);
+        super();
     }
 
     @Override
