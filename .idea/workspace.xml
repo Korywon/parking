@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4621838-5ebf-487a-a240-1c4152eb3250" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/parking-data-sets/parking.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/ParkingLot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/utility/parsers/ParserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/utility/parsers/ParserDatabase.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

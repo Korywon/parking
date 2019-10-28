@@ -1,5 +1,7 @@
 package com.github.korywon.parking.objects;
 
+import java.util.List;
+
 public class Group {
     protected String groupName;
     protected float groupPrice;
@@ -36,5 +38,14 @@ public class Group {
             "Group name: " + this.groupName + "\n" +
             "Group price: " + this.groupPrice
         );
+    }
+
+    public static int indexOfGroupList(List<Group> groupList, String groupName) {
+        for (int i = 0 ; i < groupList.size(); i++) {
+            if (groupList.get(i).getGroupName().equals(groupName)) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

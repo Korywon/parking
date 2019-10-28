@@ -71,7 +71,10 @@ public class ParserDatabase extends Parser {
             switch (splitLine[0]) {
                 case "Group":
                     Group group = this.parseGroupLine(line);
-                    if (group != null) {
+                    if (
+                        group != null &&
+                        Group.indexOfGroupList(groupList, group.getGroupName()) != -1
+                    ) {
                         this.groupList.add(group);
                     } else {
                         System.out.println(this.path + ": Invalid group entry at line " + lineNumber);
@@ -79,7 +82,10 @@ public class ParserDatabase extends Parser {
                     break;
                 case "ParkingLot":
                     ParkingLot parkingLot = this.parseParkingLotLine(line);
-                    if (parkingLot != null) {
+                    if (
+                        parkingLot != null &&
+                        ParkingLot.indexOfParkingLotList(parkingLotList, parkingLot.getParkingLotName()) != -1
+                    ) {
                         this.parkingLotList.add(parkingLot);
                     } else {
                         System.out.println(this.path + ": Invalid parking lot entry at line " + lineNumber);

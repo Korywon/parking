@@ -150,4 +150,13 @@ public class ParkingLot extends Group {
 
         return -1;
     }
+
+    public static int indexOfParkingLotList(List<ParkingLot> parkingLotList, String parkingLotName) {
+        for (int i = 0 ; i < parkingLotList.size(); i++) {
+            if (parkingLotList.get(i).getParkingLotName().equals(parkingLotName)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
