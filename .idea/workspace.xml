@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c4621838-5ebf-487a-a240-1c4152eb3250" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parking-data/tickets/active.csv" beforeDir="false" afterPath="$PROJECT_DIR$/parking-data/tickets/active.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parking-data/tickets/inactive.csv" beforeDir="false" afterPath="$PROJECT_DIR$/parking-data/tickets/inactive.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsClose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsClose.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsClosePay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsClosePay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpenAt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/openCloseTickets/OpenCloseTicketsOpenAt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewParkingLots/ViewParkingLotsMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewParkingLots/ViewParkingLotsMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/controller/state/nodes/viewTickets/ViewTicketsMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/objects/ParkingLot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/utility/parsers/ParserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/korywon/parking/utility/parsers/ParserDatabase.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +44,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.github.korywon.parking.utility.parsers" />
     </key>
   </component>
   <component name="RunAnythingCache">

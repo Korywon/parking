@@ -24,6 +24,8 @@ public class ParserDatabase extends Parser {
         this.parseDatabase();
         // assigns groups prices to each parking lot if avaiable
         this.assignGroupPrices();
+
+        System.out.println("Finished parsing " + path);
     }
 
     public List<Group> getGroupList() {

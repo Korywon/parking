@@ -4,6 +4,7 @@ import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.objects.Gate;
 import com.github.korywon.parking.objects.ParkingLot;
 import com.github.korywon.parking.objects.Ticket;
+import com.github.korywon.parking.utility.parsers.ParserDatabase;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -34,16 +35,19 @@ public class OpenCloseTicketsOpenAt extends StateNode {
 
     @Override
     public void start() {
-        System.out.println("===== " + parkingLot.getName() + " - Open New Ticket =====");
+        System.out.println("===== " + parkingLot.getParkingLotName() + " - Open New Ticket =====");
 
+        // creates a new ticket
         Ticket newTicket = new Ticket();
         String userInput;
 
+        // prompts user for license plate number input
         userInput = this.commandListener.promptForInput("Enter license plate number: ");
         newTicket.setLicensePlateNumber(userInput);
 
-        ParserTicket ticketParser = new ParserTicket("parking-data/tickets/active.csv");
-        List<Ticket> ticketsList = ticketParser.getTicketList();
+        // attempts to find an existing ticket
+        ParserDatabase dbParser = new ParserDatabase("/parking-data/parking-database.txt");
+        List<Ticket> ticketsList = dbParser.getTicketList();
         for (int i = 0; i < ticketsList.size(); i++) {
             if (ticketsList.get(i).getLicensePlateNumber().equals(userInput)) {
                 System.out.println("\""+ userInput + "\" has an active ticket. Active ticket must be closed before opening a new one.");
@@ -52,43 +56,19 @@ public class OpenCloseTicketsOpenAt extends StateNode {
             }
         }
 
-
-        List<Gate> enterGates = parkingLot.getGateEnter();
-        for (int i = 0; i < enterGates.size(); i++) {
-            System.out.println("[ " + (i+1) + " ]" + "\t" + enterGates.get(i).getName());
-        }
-
-        boolean valid = false;
-        while (!valid) {
-            userInput = this.commandListener.promptForInput("Select gate: ");
-            try {
-                int userNumber = Integer.parseInt(userInput) - 1;
-                if (userNumber >= 0 && userNumber < enterGates.size()) {
-                    newTicket.setGateEnter(enterGates.get(userNumber));
-                    valid = true;
-                }
-            } catch (Exception e) {
-                System.out.println("Invalid gate. Try again.");
-            }
-        }
-
-        Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        newTicket.setTimeEnter(formatter.format(date));
-        newTicket.setGateExit(new Gate(""));
-        newTicket.setTimeExit("");
-
+        // sets exit gate and exit amount
+        newTicket.setParkingLotName(this.parkingLot.getParkingLotName());
+        newTicket.setGateEnter(this.parkingLot.getGateEnter());
         newTicket.setAmountDue(this.parkingLot.getPrice());
 
+        // writes new ticket to the file using
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/tickets/active.csv", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/parking-database.txt", true));
             writer.newLine();
             writer.write(
                 newTicket.getLicensePlateNumber() + "," +
-                newTicket.getGateEnter().getName() + "," +
-                newTicket.getTimeEnter() + "," +
-                newTicket.getGateExit().getName() + "," +
-                newTicket.getTimeExit() + "," +
+                newTicket.getGateEnter() + "," +
+                newTicket.getGateExit() + "," +
                 newTicket.getAmountDue()
             );
             writer.close();

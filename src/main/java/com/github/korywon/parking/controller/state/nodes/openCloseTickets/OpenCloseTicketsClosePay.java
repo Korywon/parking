@@ -1,7 +1,6 @@
 package com.github.korywon.parking.controller.state.nodes.openCloseTickets;
 
 import com.github.korywon.parking.controller.state.StateNode;
-import com.github.korywon.parking.objects.Gate;
 import com.github.korywon.parking.objects.Ticket;
 
 import java.io.BufferedWriter;
@@ -40,48 +39,24 @@ public class OpenCloseTicketsClosePay extends StateNode {
             String userInput = this.commandListener.promptForInput("Enter command: ");
 
             if (userInput.equals("y")) {
-                try {
-                    BufferedWriter activeWriter = new BufferedWriter(new FileWriter("parking-data/tickets/active.csv"));
-                    for (Ticket ticket : this.ticketsList) {
-                        if (ticket != this.activeTicket) {
-                            activeWriter.write(
-                            ticket.getLicensePlateNumber() + "," +
-                                ticket.getGateEnter().getName() + "," +
-                                ticket.getTimeEnter() + "," +
-                                ticket.getGateExit().getName() + "," +
-                                ticket.getTimeExit() + "," +
-                                ticket.getAmountDue() + System.lineSeparator()
-                            );
-                        }
-                    }
-
-                    activeWriter.close();
-                } catch (Exception e) {
-                    System.out.println("Error: Unable to write to active.csv");
-                }
-
-                // Sets exit time.
-                Date date = new Date();
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                activeTicket.setGateExit(new Gate(""));
-                activeTicket.setTimeExit(formatter.format(date));
+                activeTicket.setGateExit("");
 
                 // Appends ticket to inactive.csv
                 try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/tickets/inactive.csv", true));
-                writer.newLine();
-                writer.write(
-                activeTicket.getLicensePlateNumber() + "," +
-                    activeTicket.getGateEnter().getName() + "," +
-                    activeTicket.getTimeEnter() + "," +
-                    activeTicket.getGateExit().getName() + "," +
-                    activeTicket.getTimeExit() + "," +
-                    activeTicket.getAmountDue()
-                );
-                writer.close();
+                    /*
+                    BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/tickets/inactive.csv", true));
+                    writer.newLine();
+                    writer.write(
+                    activeTicket.getLicensePlateNumber() + "," +
+                        activeTicket.getGateEnter() + "," +
+                        activeTicket.getGateExit() + "," +
+                        activeTicket.getAmountDue()
+                    );
+                    writer.close();
+                    */
 
-                System.out.println("----- Receipt -----");
-                activeTicket.printInfo();
+                    System.out.println("----- Receipt -----");
+                    activeTicket.printInfo();
 
                 } catch (Exception e) {
                     System.out.println("Error: Unable to write to file.");

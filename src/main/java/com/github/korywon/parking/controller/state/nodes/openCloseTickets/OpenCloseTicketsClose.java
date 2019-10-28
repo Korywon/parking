@@ -2,6 +2,7 @@ package com.github.korywon.parking.controller.state.nodes.openCloseTickets;
 
 import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.objects.Ticket;
+import com.github.korywon.parking.utility.parsers.ParserDatabase;
 
 import java.util.List;
 
@@ -19,10 +20,12 @@ public class OpenCloseTicketsClose extends StateNode {
     public void start() {
         System.out.println("===== Close Ticket =====");
 
+        // asks user for license plate number input
         String userInput = this.commandListener.promptForInput("Enter car's license plate number: ");
 
-        ParserTicket ticketParser = new ParserTicket("parking-data/tickets/active.csv");
-        List<Ticket> ticketsList = ticketParser.getTicketList();
+        // attempts to find an existing ticket with the user's ticket
+        ParserDatabase dbParser = new ParserDatabase("parking-data/parking-database.txt");
+        List<Ticket> ticketsList = dbParser.getTicketList();
         for (int i = 0; i < ticketsList.size(); i++) {
             if (ticketsList.get(i).getLicensePlateNumber().equals(userInput)) {
                 System.out.println("\""+ userInput + "\" has an active ticket.");
