@@ -66,6 +66,20 @@ public class ParkingLot extends Group {
         this.parkingLotPrice = parkingLotPrice;
     }
 
+
+    /**
+     * Gets the definitive price of the parking lot. If the group price is more than 0, than the group price is
+     * returned. Else the parking lot price is returned.
+     * @return
+     */
+    public float getPrice() {
+        if (this.groupPrice > 0.0f) {
+            return this.groupPrice;
+        } else {
+            return this.parkingLotPrice;
+        }
+    }
+
     public void printInfo() {
         System.out.println(
             "----- Parking Lot -----" + "\n" +
