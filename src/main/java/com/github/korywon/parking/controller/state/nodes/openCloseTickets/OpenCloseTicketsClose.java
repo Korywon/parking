@@ -27,15 +27,18 @@ public class OpenCloseTicketsClose extends StateNode {
         ParserDatabase dbParser = new ParserDatabase("parking-data/parking-database.txt");
         List<Ticket> ticketsList = dbParser.getTicketList();
         for (int i = 0; i < ticketsList.size(); i++) {
-            if (ticketsList.get(i).getLicensePlateNumber().equals(userInput)) {
+            if (
+                ticketsList.get(i).getLicensePlateNumber().equals(userInput) &&
+                "".equals(ticketsList.get(i).getGateExit())
+            ) {
                 System.out.println("\""+ userInput + "\" has an active ticket.");
-                this.nextNode = new OpenCloseTicketsClosePay("", ticketsList, i);
+                this.nextNode = new OpenCloseTicketsClosePay(i);
                 return;
             }
         }
 
         System.out.println("Unable to find ticket with license plate number: " + userInput);
-        this.nextNode = new OpenCloseTicketsMainMenu("");
+        this.nextNode = new OpenCloseTicketsMainMenu();
     }
 
     @Override

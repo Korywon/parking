@@ -25,7 +25,11 @@ public class ParserDatabase extends Parser {
         // assigns groups prices to each parking lot if avaiable
         this.assignGroupPrices();
 
-        System.out.println("Finished parsing " + path);
+        System.out.println(
+            "Number of groups: " + groupList.size() + "\n" +
+            "Number of parking lots: " + parkingLotList.size() + "\n" +
+            "Number of tickets: " + ticketList.size()
+        );
     }
 
     public List<Group> getGroupList() {
@@ -61,39 +65,40 @@ public class ParserDatabase extends Parser {
         // string array to hold elements of the split string
         String[] splitLine;
         // holds the current line number of the file
-        int lineNumber = 0;
+        int lineNumber = 1;
         while ((line = this.readFileLine()) != null) {
             splitLine = line.split(",");
-            if (splitLine[0].equals("Group")) {
-                Group group = this.parseGroupLine(line);
-                if (group != null) {
-                    this.groupList.add(group);
-                } else {
-                    System.out.println(this.path + ": Invalid group entry at line " + lineNumber);
-                }
+            switch (splitLine[0]) {
+                case "Group":
+                    Group group = this.parseGroupLine(line);
+                    if (group != null) {
+                        this.groupList.add(group);
+                    } else {
+                        System.out.println(this.path + ": Invalid group entry at line " + lineNumber);
+                    }
+                    break;
+                case "ParkingLot":
+                    ParkingLot parkingLot = this.parseParkingLotLine(line);
+                    if (parkingLot != null) {
+                        this.parkingLotList.add(parkingLot);
+                    } else {
+                        System.out.println(this.path + ": Invalid parking lot entry at line " + lineNumber);
+                    }
+                    break;
+                case "Ticket":
+                    Ticket ticket = this.parseTicketLine(line);
+                    if (ticket != null) {
+                        this.ticketList.add(ticket);
+                    } else {
+                        System.out.println(this.path + ": Invalid ticket entry at line " + lineNumber);
+                    }
+                    break;
+                default:
+                    System.out.println(this.path + ": Unknown entry at line " + lineNumber + splitLine[0]);
+                    break;
             }
-            else if (splitLine[0].equals("ParkingLot")) {
-                ParkingLot parkingLot = this.parseParkingLotLine(line);
-                if (parkingLot != null) {
-                    this.parkingLotList.add(parkingLot);
-                } else {
-                    System.out.println(this.path + ": Invalid parking lot entry at line " + lineNumber);
-                }
-            }
-            else if (splitLine[0].equals("Ticket")) {
-                Ticket ticket = this.parseTicketLine(line);
-                if (ticket != null) {
-                    this.ticketList.add(ticket);
-                } else {
-                    System.out.println(this.path + ": Invalid ticket entry at line " + lineNumber);
-                }
-            }
-            else {
-                System.out.println(this.path + ": Unknown entry at line " + lineNumber);
-            }
+            lineNumber++;
         }
-
-        lineNumber++;
     }
 
     private void assignGroupPrices() {
@@ -227,14 +232,20 @@ public class ParserDatabase extends Parser {
     }
 
     public void printGroups() {
-
+        for (Group group : groupList) {
+            group.printInfo();
+        }
     }
 
     public void printParkingLots() {
-
+        for (ParkingLot parkingLot : parkingLotList) {
+            parkingLot.printInfo();
+        }
     }
 
     public void printTickets() {
-
+        for (Ticket ticket : ticketList) {
+            ticket.printInfo();
+        }
     }
 }

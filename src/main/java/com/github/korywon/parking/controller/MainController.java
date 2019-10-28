@@ -29,7 +29,7 @@ public class MainController {
         if (initSuccess) {
             System.out.println("Starting application...");
 
-            StateNode currentState = new AppMainMenu("");
+            StateNode currentState = new AppMainMenu();
             do {
                 currentState = currentState.launch();
             } while(currentState != null);

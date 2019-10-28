@@ -15,7 +15,7 @@ import java.util.List;
 public class OpenCloseTicketsOpenAt extends StateNode {
     private ParkingLot parkingLot;
 
-    public OpenCloseTicketsOpenAt(String transitionCommand, ParkingLot parkingLot) {
+    public OpenCloseTicketsOpenAt(ParkingLot parkingLot) {
         super();
         this.parkingLot = parkingLot;
     }
@@ -46,18 +46,23 @@ public class OpenCloseTicketsOpenAt extends StateNode {
         newTicket.setLicensePlateNumber(userInput);
 
         // attempts to find an existing ticket
-        ParserDatabase dbParser = new ParserDatabase("/parking-data/parking-database.txt");
+        ParserDatabase dbParser = new ParserDatabase("parking-data/parking-database.txt");
         List<Ticket> ticketsList = dbParser.getTicketList();
         for (int i = 0; i < ticketsList.size(); i++) {
-            if (ticketsList.get(i).getLicensePlateNumber().equals(userInput)) {
+            // if license plate found and gate exit is an empty string
+            if (
+                ticketsList.get(i).getLicensePlateNumber().equals(userInput) &&
+                "".equals(ticketsList.get(i).getGateExit())
+            ) {
                 System.out.println("\""+ userInput + "\" has an active ticket. Active ticket must be closed before opening a new one.");
-                this.nextNode = new OpenCloseTicketsClosePay("", ticketsList, i);
+                this.nextNode = new OpenCloseTicketsClosePay(i);
                 return;
             }
         }
 
         // sets exit gate and exit amount
         newTicket.setParkingLotName(this.parkingLot.getParkingLotName());
+        newTicket.setGroupName(this.parkingLot.getGroupName());
         newTicket.setGateEnter(this.parkingLot.getGateEnter());
         newTicket.setAmountDue(this.parkingLot.getPrice());
 
@@ -66,14 +71,17 @@ public class OpenCloseTicketsOpenAt extends StateNode {
             BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/parking-database.txt", true));
             writer.newLine();
             writer.write(
+                "Ticket" + "," +
                 newTicket.getLicensePlateNumber() + "," +
+                newTicket.getParkingLotName() + "," +
+                newTicket.getGroupName() + "," +
+                newTicket.getParkingSpace() + "," +
                 newTicket.getGateEnter() + "," +
                 newTicket.getGateExit() + "," +
                 newTicket.getAmountDue()
             );
             writer.close();
 
-            System.out.println("----- Receipt -----");
             newTicket.printInfo();
             System.out.println("Note: Amount due will be charged when you exit the parking lot.");
 

@@ -4,7 +4,7 @@ import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.controller.state.nodes.app.AppMainMenu;
 
 public class OpenCloseTicketsMainMenu extends StateNode {
-    public OpenCloseTicketsMainMenu(String transitionCommand) {
+    public OpenCloseTicketsMainMenu() {
         super();
     }
 
@@ -36,7 +36,7 @@ public class OpenCloseTicketsMainMenu extends StateNode {
                     valid = true;
                     break;
                 case "c":
-                    this.nextNode = new AppMainMenu("");
+                    this.nextNode = new AppMainMenu();
                     valid = true;
                     break;
                 default:

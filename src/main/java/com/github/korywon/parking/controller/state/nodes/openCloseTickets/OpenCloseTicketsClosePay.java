@@ -1,7 +1,10 @@
 package com.github.korywon.parking.controller.state.nodes.openCloseTickets;
 
 import com.github.korywon.parking.controller.state.StateNode;
+import com.github.korywon.parking.objects.Group;
+import com.github.korywon.parking.objects.ParkingLot;
 import com.github.korywon.parking.objects.Ticket;
+import com.github.korywon.parking.utility.parsers.ParserDatabase;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -10,24 +13,30 @@ import java.util.Date;
 import java.util.List;
 
 public class OpenCloseTicketsClosePay extends StateNode {
-    private List<Ticket> ticketsList;
-    private Ticket activeTicket;
+    List<Group> groupList;
+    List<ParkingLot> parkingLotList;
+    List<Ticket> ticketList;
+    private int ticketIndex;
 
-    public OpenCloseTicketsClosePay(String transitionCommand, List<Ticket> ticketsList, int ticketIndex) {
+    public OpenCloseTicketsClosePay(int ticketIndex) {
         super();
-        this.ticketsList = ticketsList;
-        this.activeTicket = ticketsList.get(ticketIndex);
+        this.ticketIndex = ticketIndex;
     }
 
     @Override
     public void init() {
-
+        ParserDatabase dbParser = new ParserDatabase("parking-data/parking-database.txt");
+        groupList = dbParser.getGroupList();
+        parkingLotList = dbParser.getParkingLotList();
+        ticketList = dbParser.getTicketList();
     }
 
     @Override
     public void start() {
+        Ticket activeTicket = ticketList.get(ticketIndex);
+
         System.out.println(
-            "Amount due: " + this.activeTicket.getAmountDue() + "\n" +
+            "Amount due: " + activeTicket.getAmountDue() + "\n" +
             "\"" + activeTicket.getLicensePlateNumber() + "\" -- Pay and close ticket now?" + "\n" +
             "[ y ]" + "\t" + "Yes" + "\n" +
             "[ n ]" + "\t" + "No"
@@ -43,9 +52,9 @@ public class OpenCloseTicketsClosePay extends StateNode {
 
                 // Appends ticket to inactive.csv
                 try {
-                    /*
-                    BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/tickets/inactive.csv", true));
-                    writer.newLine();
+
+                    BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/parking-database.txt"));
+
                     writer.write(
                     activeTicket.getLicensePlateNumber() + "," +
                         activeTicket.getGateEnter() + "," +
@@ -53,7 +62,6 @@ public class OpenCloseTicketsClosePay extends StateNode {
                         activeTicket.getAmountDue()
                     );
                     writer.close();
-                    */
 
                     System.out.println("----- Receipt -----");
                     activeTicket.printInfo();
@@ -62,10 +70,10 @@ public class OpenCloseTicketsClosePay extends StateNode {
                     System.out.println("Error: Unable to write to file.");
                 }
 
-                this.nextNode = new OpenCloseTicketsMainMenu("");
+                this.nextNode = new OpenCloseTicketsMainMenu();
                 valid = true;
             } else if (userInput.equals("n")) {
-                this.nextNode = new OpenCloseTicketsMainMenu("");
+                this.nextNode = new OpenCloseTicketsMainMenu();
                 valid = true;
             } else {
                 System.out.println("Invalid command. Please try again.");

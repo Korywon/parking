@@ -44,14 +44,14 @@ public class OpenCloseTicketsOpen extends StateNode {
             String userInput = this.commandListener.promptForInput("Enter command: ");
 
             if (userInput.equals("c")) {
-                this.nextNode = new OpenCloseTicketsMainMenu("");
+                this.nextNode = new OpenCloseTicketsMainMenu();
                 valid = true;
             }
             else if (NumberUtils.isCreatable(userInput)) {
                 try {
                     int userNumber = Integer.parseInt(userInput) - 1;
                     if (userNumber >= 0 && userNumber < parkingLots.size()) {
-                        this.nextNode = new OpenCloseTicketsOpenAt("", this.parkingLots.get(userNumber));
+                        this.nextNode = new OpenCloseTicketsOpenAt(this.parkingLots.get(userNumber));
                         valid = true;
                     }
                 } catch (Exception e) {

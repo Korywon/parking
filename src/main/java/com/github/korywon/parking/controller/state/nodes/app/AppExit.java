@@ -5,7 +5,7 @@ import com.github.korywon.parking.controller.state.StateNode;
 public class AppExit extends StateNode {
     private String transitionCommand;
 
-    public AppExit(String transitionCommand) {
+    public AppExit() {
         super();
     }
 
