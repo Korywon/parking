@@ -14,3 +14,4 @@ Ticket,97P0EID,Parking Lot 1,Group Alpha,67,Gate A,,10
 Ticket,8WDGVL6,Parking Lot 1,Group Alpha,99,Gate A,,10
 Ticket,FITHYK4,Parking Lot 3,Group Alpha,76,Gate C,,5
 Ticket,RPS2G3G,Parking Lot 3,Group Alpha,37,Gate C,,5
+Ticket,GRJ9728,Parking Lot 1,Group Alpha,1,Gate A,,10.0

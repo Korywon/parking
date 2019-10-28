@@ -12,7 +12,7 @@ import java.util.List;
 public class OpenCloseTicketsOpen extends StateNode {
     public List<ParkingLot> parkingLots;
 
-    public OpenCloseTicketsOpen(String transitionCommand) {
+    public OpenCloseTicketsOpen() {
         super();
     }
 

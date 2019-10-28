@@ -29,7 +29,6 @@ public class ViewGroups extends StateNode {
                     System.out.println("\t" + parkingLot.getParkingLotName());
                 }
             }
-            System.out.println();
         }
 
         this.nextNode = new AppMainMenu();

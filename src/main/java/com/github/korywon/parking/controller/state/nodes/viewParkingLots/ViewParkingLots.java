@@ -23,16 +23,8 @@ public class ViewParkingLots extends StateNode {
     public void start() {
         for (ParkingLot parkingLot : parkingLotList) {
             parkingLot.printInfo();
-            int ticketCount = 0;
-            for (Ticket ticket : ticketList) {
-                if (
-                    ticket.getParkingLotName().equals(parkingLot.getParkingLotName()) &&
-                    "".equals(ticket.getGateExit())
-                ) {
-                    ticketCount++;
-                }
-            }
-            System.out.println("Number of parking spaces available: " + (parkingLot.getCapacity()-ticketCount) + "\n");
+            int spacesAvailable = ParkingLot.getAvailableSpaces(parkingLot, ticketList);
+            System.out.println("Number of parking spaces available: " + spacesAvailable);
         }
 
         this.nextNode = new AppMainMenu();

@@ -1,5 +1,9 @@
 package com.github.korywon.parking.objects;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class ParkingLot extends Group {
     private String parkingLotName;
     private int capacity;
@@ -95,7 +99,55 @@ public class ParkingLot extends Group {
         }
 
         System.out.println("Default price: " + this.parkingLotPrice);
+    }
 
-        System.out.println();
+    /**
+     * Returns the number of available parking spaces for a given parking lot and ticket list.
+     * @param parkingLot
+     * @param ticketList
+     * @return
+     */
+    public static int getAvailableSpaces(ParkingLot parkingLot, List<Ticket> ticketList) {
+        int ticketCount = 0;
+        for (Ticket ticket : ticketList) {
+            if (
+                ticket.getParkingLotName().equals(parkingLot.getParkingLotName()) &&
+                    "".equals(ticket.getGateExit())
+            ) {
+                ticketCount++;
+            }
+        }
+
+        return parkingLot.getCapacity() - ticketCount;
+    }
+
+    /**
+     * Gets the lowest parking space available in the parking lot based on the given parking lot and ticket list.
+     * Returns a -1 if there are no open spaces available.
+     * @param parkingLot
+     * @param ticketList
+     * @return
+     */
+    public static int getLowestAvailableSpace(ParkingLot parkingLot, List<Ticket> ticketList) {
+        List<Integer> occupiedSpaces = new ArrayList<Integer>();
+        for (Ticket ticket : ticketList) {
+            if (
+                ticket.getParkingLotName().equals(parkingLot.getParkingLotName()) &&
+                !"".equals(ticket.getGateExit())
+            ) {
+                occupiedSpaces.add(ticket.getParkingSpace());
+            }
+        }
+
+        Collections.sort(occupiedSpaces);
+
+        for (int i = 0; i < parkingLot.getCapacity(); i++) {
+            int index = occupiedSpaces.indexOf(i);
+            if (index != -1) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }

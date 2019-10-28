@@ -28,11 +28,11 @@ public class OpenCloseTicketsMainMenu extends StateNode {
 
             switch (userInput) {
                 case "1":
-                    this.nextNode = new OpenCloseTicketsOpen("");
+                    this.nextNode = new OpenCloseTicketsOpen();
                     valid = true;
                     break;
                 case "2":
-                    this.nextNode = new OpenCloseTicketsClose("");
+                    this.nextNode = new OpenCloseTicketsClose();
                     valid = true;
                     break;
                 case "c":

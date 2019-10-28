@@ -4,6 +4,7 @@ import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.objects.Group;
 import com.github.korywon.parking.objects.ParkingLot;
 import com.github.korywon.parking.objects.Ticket;
+import com.github.korywon.parking.utility.WriterDatabase;
 import com.github.korywon.parking.utility.parsers.ParserDatabase;
 
 import java.io.BufferedWriter;
@@ -33,8 +34,10 @@ public class OpenCloseTicketsClosePay extends StateNode {
 
     @Override
     public void start() {
+        // sets active ticket for local scope
         Ticket activeTicket = ticketList.get(ticketIndex);
 
+        // prints UI
         System.out.println(
             "Amount due: " + activeTicket.getAmountDue() + "\n" +
             "\"" + activeTicket.getLicensePlateNumber() + "\" -- Pay and close ticket now?" + "\n" +
@@ -42,26 +45,32 @@ public class OpenCloseTicketsClosePay extends StateNode {
             "[ n ]" + "\t" + "No"
         );
 
-
+        // validity input loop
         boolean valid = false;
         while (!valid) {
+            // waits for command input from user
             String userInput = this.commandListener.promptForInput("Enter command: ");
 
             if (userInput.equals("y")) {
-                activeTicket.setGateExit("");
+                // attempts to find parking lot name to set gate exit
+                boolean found = false;
+                for (ParkingLot parkingLot : parkingLotList) {
+                    if (parkingLot.getParkingLotName().equals(activeTicket.getParkingLotName())) {
+                        found = true;
+                        activeTicket.setGateExit(parkingLot.getGateExit());
+                    }
+                }
 
-                // Appends ticket to inactive.csv
+                // if parking lot is not found, set gate exit to SYSTEM by default
+                if (!found) {
+                    System.out.println("Warning: Unable to find parking lot " + activeTicket.getParkingLotName() + ". "
+                        + "Setting gate exit to SYSTEM.");
+                    ticketList.get(ticketIndex).setGateExit("SYSTEM");
+                }
+
+                // rewrites list to the database file
                 try {
-
-                    BufferedWriter writer = new BufferedWriter(new FileWriter("parking-data/parking-database.txt"));
-
-                    writer.write(
-                    activeTicket.getLicensePlateNumber() + "," +
-                        activeTicket.getGateEnter() + "," +
-                        activeTicket.getGateExit() + "," +
-                        activeTicket.getAmountDue()
-                    );
-                    writer.close();
+                    WriterDatabase.writeToDatabase(groupList, parkingLotList, ticketList);
 
                     System.out.println("----- Receipt -----");
                     activeTicket.printInfo();

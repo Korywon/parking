@@ -7,7 +7,7 @@ import com.github.korywon.parking.utility.parsers.ParserDatabase;
 import java.util.List;
 
 public class OpenCloseTicketsClose extends StateNode {
-    public OpenCloseTicketsClose(String transitionCommand) {
+    public OpenCloseTicketsClose() {
         super();
     }
 

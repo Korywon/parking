@@ -4,6 +4,7 @@ import com.github.korywon.parking.controller.state.StateNode;
 import com.github.korywon.parking.objects.Gate;
 import com.github.korywon.parking.objects.ParkingLot;
 import com.github.korywon.parking.objects.Ticket;
+import com.github.korywon.parking.utility.parsers.Parser;
 import com.github.korywon.parking.utility.parsers.ParserDatabase;
 
 import java.io.BufferedWriter;
@@ -14,6 +15,7 @@ import java.util.List;
 
 public class OpenCloseTicketsOpenAt extends StateNode {
     private ParkingLot parkingLot;
+    private List<Ticket> ticketList;
 
     public OpenCloseTicketsOpenAt(ParkingLot parkingLot) {
         super();
@@ -30,11 +32,20 @@ public class OpenCloseTicketsOpenAt extends StateNode {
 
     @Override
     public void init() {
-
+        // parses the database file and gets the ticket list
+        ParserDatabase dbParser = new ParserDatabase("parking-data/parking-database.txt");
+        ticketList = dbParser.getTicketList();
     }
 
     @Override
     public void start() {
+        int availableSpace = ParkingLot.getLowestAvailableSpace(this.parkingLot, this.ticketList);
+        if (availableSpace == -1) {
+            System.out.println(this.parkingLot.getParkingLotName() + " has no available spaces.");
+            this.nextNode = new OpenCloseTicketsOpen();
+            return;
+        }
+
         System.out.println("===== " + parkingLot.getParkingLotName() + " - Open New Ticket =====");
 
         // creates a new ticket
@@ -64,6 +75,7 @@ public class OpenCloseTicketsOpenAt extends StateNode {
         newTicket.setParkingLotName(this.parkingLot.getParkingLotName());
         newTicket.setGroupName(this.parkingLot.getGroupName());
         newTicket.setGateEnter(this.parkingLot.getGateEnter());
+        newTicket.setParkingSpace(availableSpace);
         newTicket.setAmountDue(this.parkingLot.getPrice());
 
         // writes new ticket to the file using
@@ -89,7 +101,7 @@ public class OpenCloseTicketsOpenAt extends StateNode {
             System.out.println("Error: Unable to write to file.");
         }
 
-        this.nextNode = new OpenCloseTicketsOpen("");
+        this.nextNode = new OpenCloseTicketsOpen();
     }
 
     @Override
