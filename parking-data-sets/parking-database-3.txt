@@ -1,0 +1,16 @@
+Group,Grou
+Group,Group Beta,5
+ParkingLot,Parking Lot 1,Group 00
+ParkingLot,Parking Lot 2,Group Beta,100,Gate M,Gate N,2.50
+ParkingLot 3,Group Beta,100,Gate C,Gate D,2.50
+Ticket,GRJoup Alpha,1,Gate A,Gate B,10
+Ticket,MBN1855,Parking Lot 1,Group Alpha,2,Gate A,,10
+Ticket,JOK1545,ParkiGate A,Gate B,10
+Ticket,JOK1545,Parking Lot 2,Group Alpha,11,Gate M,,5
+Ticket,T2T8WY6,Parking Lot 1,Group Alpha,44,Gate A,,5
+Ticket,8S4J09S,Pa,23,Gate M,Gate N,5
+Ticket,HSFOA8T,Park
+Ticket,97P0EID,Parking Lot 1,Group Alpha,67,Gate A,,10
+Ticket,8WDGVp Alpha,99,Gate A,,10
+Ticket,FITHYK4,Parking Lot 3,Group Alpha,76,Gate C,,5
+Ticket,RPS2G3G,Parkte C,,5
